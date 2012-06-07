@@ -1,5 +1,5 @@
-Mac dotfiles
-============
+Linux dotfiles
+==============
 
 * Ubuntu 12.04
 
