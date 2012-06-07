@@ -48,14 +48,6 @@ compinit
 autoload zed
 setopt complete_aliases
 
-alias ls="ls --color=auto"
-alias la="ls -a"
-alias ll="ls -l"
-alias du="du -h"
-alias df="df -h"
-alias su="su -l"
-alias grep="grep --color"
-
 # show git branch
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 function rprompt-git-current-branch {
