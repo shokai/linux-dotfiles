@@ -13,6 +13,7 @@ export GREP_OPTIONS='--color=auto'
 alias screen="screen -U -O"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin
 
 export 'JAVA_OPTS=-d32'
 export 'JRUBY_OPTS=-X-C'
