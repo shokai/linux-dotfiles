@@ -35,7 +35,7 @@ bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 bindkey "^[[3~" backward-delete-char
 
-HISTFILE=~/.zsh_history
+HISTFILE=~/.zsh-history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups
