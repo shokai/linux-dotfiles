@@ -38,7 +38,7 @@ bindkey "^[[3~" backward-delete-char
 HISTFILE=~/.zsh-history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt hist_ignore_dups
+setopt extended_history
 setopt share_history
 function history-all { history -E 1 }
 
