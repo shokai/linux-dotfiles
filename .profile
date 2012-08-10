@@ -21,5 +21,5 @@ alias javac='javac -J-Dfile.encoding=UTF8'
 alias jar='jar -J-Dfile.encoding=UTF8'
 
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
-export NODE_PATH=/usr/local/lib/node_modules:$HOME/node_modules:$HOME/.npm/libraries:$NODE_PATH
+#export NODE_PATH=/usr/local/lib/node_modules:$HOME/node_modules:$HOME/.npm/libraries:$NODE_PATH
 export PATH=$PATH:$HOME/.npm/npm/bin:$HOME/node_modules/.bin
