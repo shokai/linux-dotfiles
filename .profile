@@ -16,7 +16,7 @@ alias screen="screen -U -O"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin
 
-export 'JAVA_OPTS=-d32'
+export 'JAVA_OPTS=-d64'
 export 'JRUBY_OPTS=-X-C'
 alias javac='javac -J-Dfile.encoding=UTF8'
 alias jar='jar -J-Dfile.encoding=UTF8'
