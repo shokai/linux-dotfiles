@@ -13,9 +13,6 @@ alias su="su -l"
 export GREP_OPTIONS='--color=auto'
 alias screen="screen -U -O"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin
-
 export 'JAVA_OPTS=-d64'
 export 'JRUBY_OPTS=-X-C'
 alias javac='javac -J-Dfile.encoding=UTF8'
@@ -24,3 +21,6 @@ alias jar='jar -J-Dfile.encoding=UTF8'
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 #export NODE_PATH=/usr/local/lib/node_modules:$HOME/node_modules:$HOME/.npm/libraries:$NODE_PATH
 export PATH=$PATH:$HOME/.npm/npm/bin:$HOME/node_modules/.bin
+
+export PATH=$PATH:$HOME/.rbenv/bin
+eval "$(rbenv init -)"
