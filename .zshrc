@@ -1,5 +1,3 @@
-[ -f ~/.profile ] && source ~/.profile
-
 autoload colors
 colors
 case ${UID} in
