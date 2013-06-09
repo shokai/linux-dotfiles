@@ -1,5 +1,0 @@
-#!/bin/zsh
-source $HOME/.rvm/scripts/rvm
-rvm use $1
-
-zsh -c $2
