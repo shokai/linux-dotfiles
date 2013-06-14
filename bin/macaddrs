@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'parallel'
+
+ARGV.each do |arg|
+  unless arg =~ /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/
+    STDERR.puts %Q{invalid addr "#{arg}"}
+    exit 1
+  end
+end
+
+first = ARGV.shift || '192.168.0.1'
+last  = ARGV.shift || first.gsub(/\d+$/, '254')
+puts "check #{first} ~ #{last}"
+
+addrs = []
+first.scan(/\d+$/)[0].to_i.upto(254) do |i|
+  addr = first.gsub(/\d+$/, i.to_s)
+  addrs << addr
+  break if addr == last
+end
+
+results = Parallel.map(addrs, :in_threads => addrs.count){|addr|
+  `ping -c 1 #{addr}`
+  `arp -n #{addr}`.strip
+}.select{|i|
+  i =~ /[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}/
+}.map{|i|
+  {
+    :mac => i.scan(/[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}:[a-z\d]{1,2}/)[0],
+    :ip => i.scan(/\d+\.\d+\.\d+.\d+/)[0]
+  }
+}
+
+puts "-"*2
+results.each do |res|
+  puts "#{res[:ip]}\t#{res[:mac]}"
+end
