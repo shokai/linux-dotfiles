@@ -20,7 +20,7 @@ first.scan(/\d+$/)[0].to_i.upto(254) do |i|
   break if addr == last
 end
 
-results = Parallel.map(addrs, :in_threads => addrs.count){|addr|
+results = Parallel.map(addrs, :in_threads => 128){|addr|
   `ping -c 1 #{addr}`
   `arp -n #{addr}`.strip
 }.select{|i|
