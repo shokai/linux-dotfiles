@@ -1,6 +1,7 @@
 Linux dotfiles
 ==============
 
+- https://github.com/shokai/linux-dotfiles
 - Ubuntu 12.04 / Raspbian
 - zsh
 - screen
